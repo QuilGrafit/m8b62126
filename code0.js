@@ -766,7 +766,7 @@ gdjs.copyArray(runtimeScene.getObjects("text"), gdjs.main_95sceneCode.GDtextObje
 }
 
 
-};gdjs.main_95sceneCode.userFunc0xf7e3b8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.main_95sceneCode.userFunc0x1113d98 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 // Проверяем, запущены ли мы внутри Telegram Mini App
 if (window.Telegram && window.Telegram.WebApp) {
@@ -777,12 +777,37 @@ if (window.Telegram && window.Telegram.WebApp) {
     window.location.href = 'https://omg10.com/4/11735676';
 }
 };
+gdjs.main_95sceneCode.userFunc0x1113e80 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+// Проверяем, что игра запущена внутри Telegram
+if (window.Telegram && window.Telegram.WebApp) {
+    const backButton = window.Telegram.WebApp.BackButton;
+    
+    // Показываем системную кнопку "Назад" в шапке Telegram
+    backButton.show();
+    
+    // Вешаем событие на её нажатие
+    backButton.onClick(function() {
+        // Здесь твоя логика: сбросить состояние шара, вернуть на главный экран 
+        // или закрыть WebApp, если игрок на главном экране:
+        window.Telegram.WebApp.close();
+    });
+}
+};
 gdjs.main_95sceneCode.eventsList10 = function(runtimeScene) {
 
 {
 
 
-gdjs.main_95sceneCode.userFunc0xf7e3b8(runtimeScene);
+gdjs.main_95sceneCode.userFunc0x1113d98(runtimeScene);
+
+}
+
+
+{
+
+
+gdjs.main_95sceneCode.userFunc0x1113e80(runtimeScene);
 
 }
 
